@@ -2,35 +2,70 @@
 let humanScore = 0
 let computerScore = 0
 
+function playRound (humanChoice, computerChoice) {
+
+    console.log("Your choice: " + humanChoice);
+    console.log("Computer's choice: " + computerChoice);
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    } else if (humanChoice === "Rock") {
+        if (computerChoice === "Scissors") {
+            console.log("You win! Rock smashes scissors.")
+        } else {
+            console.log("You lose! Paper covers rock.")
+        }
+    } else if (humanChoice === "Paper") {
+        if (computerChoice === "Rock") {
+            console.log("You win! Paper covers rock.")
+        } else {
+            console.log("You lose! Scissors cut paper.")
+        }
+    } else if (humanChoice === "Scissors") {
+        if (computerChoice === "Paper") {
+            console.log("You win! Scissors cut paper.")
+        } else {
+            console.log("You lose! Rock smashes scissors.")
+        }
+    }
+}  
+
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(humanSelection, computerSelection)
+
 function getComputerChoice() {    
-   let computerChoice = Math.floor(Math.random() * 3)
-   if (computerChoice == 0)
-    return "Rock";
-   else if (computerChoice == 1)
-    return "Paper"
-   else if (computerChoice == 2)
-    return "Scissors"    
-   return computerChoice
+    const computerChoice = Math.floor(Math.random() * 3)
+    if (computerChoice == 0)
+     return "Rock";
+    else if (computerChoice == 1)
+     return "Paper"
+    else if (computerChoice == 2)
+     return "Scissors"    
+    return computerChoice
+ }
+ 
+ function getHumanChoice() {
+     const humanChoice = prompt("Will you pick Rock, Paper or Scissors?");
+     if (humanChoice.toLowerCase() === "rock")
+        return "Rock";
+    else if (humanChoice.toLowerCase() === "paper")
+        return "Paper";
+    else if (humanChoice.toLowerCase() === "scissors")
+        return "Scissors"
 }
-
-function getHumanChoice() {
-    let humanChoice = prompt("Will you pick Rock, Paper or Scissors?")
     
-    return humanChoice;
-}
-//console.log("Computer chose: " + getComputerChoice() + "\nYou chose: " + getHumanChoice())
-const humanChoice = getHumanChoice()
-const computerChoice = getComputerChoice()
-
-function playRound (getHumanChoice, getComputerChoice) {
-    
-
-    console.log("You chose: " + humanChoice + "\nComputer Chose " + computerChoice);
-
-}
 
 
-playRound() 
+
+
+
+
+
+
+
 
 
 
