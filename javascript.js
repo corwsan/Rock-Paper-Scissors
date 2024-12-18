@@ -1,23 +1,46 @@
 function getComputerChoice() {    
 
-   choice = Math.floor(Math.random() * 3)
+   let computerChoice = Math.floor(Math.random() * 3)
 
-   if (choice == 0)
-    choice = "Rock";
-   else if (choice == 1)
-    choice = "Paper"
-   else if (choice == 2)
-    choice = "Scissors"
+   if (computerChoice == 0)
+    return "Rock";
+   else if (computerChoice == 1)
+    return "Paper"
+   else if (computerChoice == 2)
+    return "Scissors"
     
-   return choice
+   return computerChoice
 }
 
 function getHumanChoice () {
 
-    choice = prompt("Will you pick Rock, Paper or Scissors?")
-        return choice;
+    let humanChoice = prompt("Will you pick Rock, Paper or Scissors?")
+    
+    return humanChoice;
+}
+
+getHumanChoice ()
+
+console.log("You chose: " + getHumanChoice() + "\nComputer Chose : " + computerChoice)
+
+/*
+let humanScore = 0
+let computerScore = 0
+
+const humanChoice = getHumanChoice()
+const computerChoice = getComputerChoice()
+
+
+function playRound (humanChoice, computerChoice) {
+    console.log("You chose: " + humanChoice + "\nComputer Chose " + computerChoice);
+
 }
 
 
-console.log(getComputerChoice())
-console.log(getHumanChoice())
+playRound() */
+
+
+
+
+
+
