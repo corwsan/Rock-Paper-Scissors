@@ -19,9 +19,8 @@ function getHumanChoice () {
     return humanChoice;
 }
 
-getHumanChoice ()
+console.log("Computer chose: " + getComputerChoice() + "\nYou chose: " + getHumanChoice())
 
-console.log("You chose: " + getHumanChoice() + "\nComputer Chose : " + computerChoice)
 
 /*
 let humanScore = 0
