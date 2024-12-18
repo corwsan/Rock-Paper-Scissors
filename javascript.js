@@ -19,24 +19,23 @@ function getHumanChoice () {
     return humanChoice;
 }
 
-console.log("Computer chose: " + getComputerChoice() + "\nYou chose: " + getHumanChoice())
+//console.log("Computer chose: " + getComputerChoice() + "\nYou chose: " + getHumanChoice())
 
-
-/*
 let humanScore = 0
 let computerScore = 0
+
 
 const humanChoice = getHumanChoice()
 const computerChoice = getComputerChoice()
 
 
-function playRound (humanChoice, computerChoice) {
+function playRound (getHumanChoice, getComputerChoice) {
     console.log("You chose: " + humanChoice + "\nComputer Chose " + computerChoice);
 
 }
 
 
-playRound() */
+playRound() 
 
 
 
