@@ -12,20 +12,26 @@ function playRound (humanChoice, computerChoice) {
     } else if (humanChoice === "Rock") {
         if (computerChoice === "Scissors") {
             console.log("You win! Rock smashes scissors.")
+            humanScore++
         } else {
             console.log("You lose! Paper covers rock.")
+            computerScore++
         }
     } else if (humanChoice === "Paper") {
         if (computerChoice === "Rock") {
             console.log("You win! Paper covers rock.")
+            humanScore++
         } else {
             console.log("You lose! Scissors cut paper.")
+            computerScore++
         }
     } else if (humanChoice === "Scissors") {
         if (computerChoice === "Paper") {
             console.log("You win! Scissors cut paper.")
+            humanScore++
         } else {
             console.log("You lose! Rock smashes scissors.")
+            computerScore++
         }
     }
 }  
