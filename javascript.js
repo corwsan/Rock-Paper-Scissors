@@ -1,14 +1,3 @@
-/* 
-Make play game function
-Run five rounds of playRound
-Keep track of score across 5 rounds
-Declare winner at the end
- */
-
-/*let humanSelection = getHumanChoice()
-    //console.log(humanSelection)
-let computerSelection = getComputerChoice()
-    //console.log(computerSelection)*/
 let round = 1;
     console.log("round" +round);
 let humanScore = 0;
@@ -25,20 +14,15 @@ function playGame () {
         console.log("Round: " + round + "\nHuman Score: " + humanScore + "\nComputer Score : " + computerScore);
         round++        
     }
-
     if (humanScore === computerScore) {
         console.log("It's a tie! \nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
     } else if (humanScore > computerScore) {
             console.log("You win! \nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
         } else {
             console.log("You lose! \nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
-        }
     }
-
+} 
     
-    
-
-
 function playRound (humanChoice, computerChoice) {
 
     console.log("Your choice: " + humanChoice);
@@ -72,10 +56,6 @@ function playRound (humanChoice, computerChoice) {
         }
     }
 }  
-
-
-
-
 
 function getComputerChoice() {    
     const computerChoice = Math.floor(Math.random() * 3)
