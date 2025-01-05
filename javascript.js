@@ -59,6 +59,10 @@ function playGame () {
 
 const resultDraw = document.createElement("p");
 resultDraw.textContent = "It's a tie!";
+const resultWin = document.createElement("p");
+resultWin.textContent = "You win!";
+const resultLose = document.createElement("p");
+resultLose.textContent= "You lose!";
     
 function playRound (humanChoice, computerChoice) {
 
@@ -70,25 +74,31 @@ function playRound (humanChoice, computerChoice) {
         //console.log("It's a tie!");
     } else if (humanChoice === "Rock") {
         if (computerChoice === "Scissors") {
+            results.appendChild(resultWin.cloneNode(true));
             //console.log("You win! Rock smashes scissors.");
             humanScore++;
         } else {
+            results.appendChild(resultLose.cloneNode(true));
             //console.log("You lose! Paper covers rock.");
             computerScore++;
         }
     } else if (humanChoice === "Paper") {
         if (computerChoice === "Rock") {
+            results.appendChild(resultWin.cloneNode(true));
             //console.log("You win! Paper covers rock.");
             humanScore++;
         } else {
+            results.appendChild(resultLose.cloneNode(true));
             //console.log("You lose! Scissors cut paper.");
             computerScore++;
         }
     } else if (humanChoice === "Scissors") {
         if (computerChoice === "Paper") {
+            results.appendChild(resultWin.cloneNode(true));
             //console.log("You win! Scissors cut paper.");
             humanScore++;
         } else {
+            results.appendChild(resultLose.cloneNode(true));
             //console.log("You lose! Rock smashes scissors.");
             computerScore++;
         }
