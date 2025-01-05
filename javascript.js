@@ -7,14 +7,26 @@ const paperBtn = document.createElement("button");
 paperBtn.textContent = "Paper";
 
 const scissorsBtn = document.createElement("button");
-scissorsBtn.textContent = "Scissors"
+scissorsBtn.textContent = "Scissors";
 
 btnContainer.appendChild(rockBtn);
 btnContainer.appendChild(paperBtn);
 btnContainer.appendChild(scissorsBtn);
 
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        humanChoice = button.textContent;
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+        //console.log(button.textContent)
+    });
+});
+
+
 let round = 1;
-    console.log("round" +round);
+    console.log("Round: " +round);
 let humanScore = 0;
     console.log(humanScore);
 let computerScore = 0;
