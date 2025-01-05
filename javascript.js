@@ -1,4 +1,5 @@
 const btnContainer = document.querySelector("#btn-container");
+const results = document.querySelector("#results");
 
 const rockBtn = document.createElement("button");
 rockBtn.textContent = "Rock";
@@ -23,6 +24,8 @@ buttons.forEach((button) => {
         //console.log(button.textContent)
     });
 });
+
+
 
 
 let round = 1;
@@ -50,7 +53,12 @@ function playGame () {
     }
 } */
 
+//use new #results div to display results
+//change console.logs to DOM methods
+//create <p> in #results to display round result
 
+const resultDraw = document.createElement("p");
+resultDraw.textContent = "It's a tie!";
     
 function playRound (humanChoice, computerChoice) {
 
@@ -58,29 +66,30 @@ function playRound (humanChoice, computerChoice) {
     console.log("Computer's choice: " + computerChoice);
 
     if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
+        results.appendChild(resultDraw.cloneNode(true));
+        //console.log("It's a tie!");
     } else if (humanChoice === "Rock") {
         if (computerChoice === "Scissors") {
-            console.log("You win! Rock smashes scissors.");
+            //console.log("You win! Rock smashes scissors.");
             humanScore++;
         } else {
-            console.log("You lose! Paper covers rock.");
+            //console.log("You lose! Paper covers rock.");
             computerScore++;
         }
     } else if (humanChoice === "Paper") {
         if (computerChoice === "Rock") {
-            console.log("You win! Paper covers rock.");
+            //console.log("You win! Paper covers rock.");
             humanScore++;
         } else {
-            console.log("You lose! Scissors cut paper.");
+            //console.log("You lose! Scissors cut paper.");
             computerScore++;
         }
     } else if (humanChoice === "Scissors") {
         if (computerChoice === "Paper") {
-            console.log("You win! Scissors cut paper.");
+            //console.log("You win! Scissors cut paper.");
             humanScore++;
         } else {
-            console.log("You lose! Rock smashes scissors.");
+            //console.log("You lose! Rock smashes scissors.");
             computerScore++;
         }
     }
