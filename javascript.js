@@ -1,3 +1,18 @@
+const btnContainer = document.querySelector("#btn-container");
+
+const rockBtn = document.createElement("button");
+rockBtn.textContent = "Rock";
+
+const paperBtn = document.createElement("button");
+paperBtn.textContent = "Paper";
+
+const scissorsBtn = document.createElement("button");
+scissorsBtn.textContent = "Scissors"
+
+btnContainer.appendChild(rockBtn);
+btnContainer.appendChild(paperBtn);
+btnContainer.appendChild(scissorsBtn);
+
 let round = 1;
     console.log("round" +round);
 let humanScore = 0;
@@ -5,7 +20,7 @@ let humanScore = 0;
 let computerScore = 0;
     console.log(computerScore);
 
-playGame ();
+/*playGame ();
 
 function playGame () {
 
@@ -21,7 +36,9 @@ function playGame () {
         } else {
             console.log("You lose! \nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
     }
-} 
+} */
+
+
     
 function playRound (humanChoice, computerChoice) {
 
