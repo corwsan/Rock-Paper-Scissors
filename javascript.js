@@ -56,48 +56,55 @@ function playGame () {
 //change console.logs to DOM methods
 //create <p> in #results to display round result
 
-const resultDraw = document.createElement("p");
-resultDraw.textContent = "It's a tie!";
-const resultWin = document.createElement("p");
-resultWin.textContent = "You win!";
-const resultLose = document.createElement("p");
-resultLose.textContent= "You lose!";
+const resultDraw = document.createTextNode(" -It's a tie!");
+const resultWin = document.createTextNode(" -You win!");
+const resultLose = document.createTextNode(" -You lose!");
     
 function playRound (humanChoice, computerChoice) {
+
+    const roundResult = document.createElement("p");
+    roundResult.textContent = "You chose: " + humanChoice + " " + "Computer chose: " + computerChoice;
 
     console.log("Your choice: " + humanChoice);
     console.log("Computer's choice: " + computerChoice);
 
     if (humanChoice === computerChoice) {
-        results.appendChild(resultDraw.cloneNode(true));
+        roundResult.appendChild(resultDraw);
+        results.appendChild(roundResult.cloneNode(true));        
         //console.log("It's a tie!");
     } else if (humanChoice === "Rock") {
         if (computerChoice === "Scissors") {
-            results.appendChild(resultWin.cloneNode(true));
+            roundResult.appendChild(resultWin);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You win! Rock smashes scissors.");
             humanScore++;
         } else {
-            results.appendChild(resultLose.cloneNode(true));
+            roundResult.appendChild(resultLose);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You lose! Paper covers rock.");
             computerScore++;
         }
     } else if (humanChoice === "Paper") {
         if (computerChoice === "Rock") {
-            results.appendChild(resultWin.cloneNode(true));
+            roundResult.appendChild(resultWin);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You win! Paper covers rock.");
             humanScore++;
         } else {
-            results.appendChild(resultLose.cloneNode(true));
+            roundResult.appendChild(resultLose);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You lose! Scissors cut paper.");
             computerScore++;
         }
     } else if (humanChoice === "Scissors") {
         if (computerChoice === "Paper") {
-            results.appendChild(resultWin.cloneNode(true));
+            roundResult.appendChild(resultWin);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You win! Scissors cut paper.");
             humanScore++;
         } else {
-            results.appendChild(resultLose.cloneNode(true));
+            roundResult.appendChild(resultLose);
+            results.appendChild(roundResult.cloneNode(true));
             //console.log("You lose! Rock smashes scissors.");
             computerScore++;
         }
