@@ -28,11 +28,11 @@ buttons.forEach((button) => {
 
 
 let round = 1;
-    console.log("Round: " +round);
+    //console.log("Round: " +round);
 let humanScore = 0;
-    console.log(humanScore);
+    //console.log(humanScore);
 let computerScore = 0;
-    console.log(computerScore);
+    //console.log(computerScore);
 
 /*playGame ();
 
@@ -65,8 +65,8 @@ function playRound (humanChoice, computerChoice) {
     const roundResult = document.createElement("p");
     roundResult.textContent = "You chose: " + humanChoice + " " + "Computer chose: " + computerChoice;
 
-    console.log("Your choice: " + humanChoice);
-    console.log("Computer's choice: " + computerChoice);
+    //console.log("Your choice: " + humanChoice);
+    //console.log("Computer's choice: " + computerChoice);
 
     if (humanChoice === computerChoice) {
         roundResult.appendChild(resultDraw);
@@ -111,12 +111,31 @@ function playRound (humanChoice, computerChoice) {
     }
     round++;
     updateDisplays();
+    checkForWinner();
 }  
 
 function updateDisplays () {
     roundDisplay.textContent = "Round: " + round;
     humanScoreDisplay.textContent = "Players Score: " + humanScore;
     computerScoreDisplay.textContent = "Computer's Score: " + computerScore;
+}
+
+function checkForWinner () {
+    if (humanScore || playerScore === 5) {
+        replayGame ();
+    }
+}
+
+function replayGame () {
+    if (humanScore === 5) {
+        const humanWins = document.createElement("p");
+        humanWins.textContent = "YOU WIN THE GAME!"
+        results.appendChild(humanWins);
+    } else if (computerScore === 5) {
+        const computerWins = document.createElement("p");
+        computerWins.textContent = "YOU LOST SUCKER!"
+        results.appendChild(computerWins);
+    }
 }
 
 function getComputerChoice() {    
