@@ -1,12 +1,11 @@
+const scoreContainer = document.querySelector("#score-container")
 const btnContainer = document.querySelector("#btn-container");
 const results = document.querySelector("#results");
 
 const rockBtn = document.createElement("button");
 rockBtn.textContent = "Rock";
-
 const paperBtn = document.createElement("button");
 paperBtn.textContent = "Paper";
-
 const scissorsBtn = document.createElement("button");
 scissorsBtn.textContent = "Scissors";
 
@@ -21,9 +20,9 @@ buttons.forEach((button) => {
         humanChoice = button.textContent;
         computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
-        //console.log(button.textContent)
     });
 });
+
 
 
 
@@ -103,7 +102,15 @@ function playRound (humanChoice, computerChoice) {
             computerScore++;
         }
     }
+    round++;
+    updateDisplays();
 }  
+
+function updateDisplays () {
+    roundDisplay.textContent = "Round: " + round;
+    humanScoreDisplay.textContent = "Players Score: " + humanScore;
+    computerScoreDisplay.textContent = "Computer's Score: " + computerScore;
+}
 
 function getComputerChoice() {    
     const computerChoice = Math.floor(Math.random() * 3)
@@ -126,6 +133,18 @@ function getComputerChoice() {
     } else if (humanChoice.toLowerCase() === "scissors")
         return "Scissors"
 }
+
+const roundDisplay = document.createElement("p");
+roundDisplay.textContent = "Round: " + round;
+scoreContainer.appendChild(roundDisplay);
+
+const humanScoreDisplay = document.createElement("p");
+humanScoreDisplay.textContent = "Players Score: " + humanScore;
+scoreContainer.appendChild(humanScoreDisplay);
+
+const computerScoreDisplay = document.createElement("p");
+computerScoreDisplay.textContent = "Computer Score: " + computerScore;
+scoreContainer.appendChild(computerScoreDisplay);
     
 
 
